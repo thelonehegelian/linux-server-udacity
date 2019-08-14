@@ -96,13 +96,13 @@ logging into root@167.71.128.240
 - $ sudo apt-get install libpq-dev python-dev
 - $ sudo apt-get install postgresql postgresql-contrib
 - $ sudo -u postgres psql
-- # CREATE USER catalog with password 'catalog';
-- # ALTER USER catalog CREATEDB;
-- # CREATE DATABASE catalog with owner catalog;
-- Connect to database: # \c catalog
-- # REVOKE ALL ON SCHEMA public FROM public;
-- # GRANT ALL ON SCHEMA public to catalog;
-- Log out from postgres: # \q
+- CREATE USER catalog with password 'catalog';
+- ALTER USER catalog CREATEDB;
+- CREATE DATABASE catalog with owner catalog;
+- Connect to database: \c catalog
+- REVOKE ALL ON SCHEMA public FROM public;
+- GRANT ALL ON SCHEMA public to catalog;
+- Log out from postgres: \q
 ### Edit python files
 - Change in database_setup.py, books.py and __init__.py : engine = create_engine('sqlite:///bookstore.db') to engine = create_engine('postgresql://catalog:catalog@localhost/catalog')
 ### Populate the database and run the website
