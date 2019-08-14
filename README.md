@@ -5,8 +5,11 @@ This file contains the software and steps required to deploy a Flask app.
 For this application Digital Ocean was used for a Ubuntu Linux server instance. 
 - IP Address: 167.71.128.240
 - URL: http://www.167.71.128.240.xip.io/
+- App directory (WSGIScript File in/web root path): /var/www/catalog/
+- SSH port: 2200
 - ssh grader@167.71.128.240 -p 2200
 - Passphrase: thisisroot
+- 'grader' user password: root
 
 ### Initial steps
 logging into root@167.71.128.240
