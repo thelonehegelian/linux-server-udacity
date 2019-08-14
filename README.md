@@ -170,5 +170,6 @@ PasswordAuthentication no
 - https://docs.sqlalchemy.org/en/13/core/engines.html 
 - https://www.cyberciti.biz/faq/how-to-use-chmod-and-chown-command/
 - https://serverfault.com/questions/128069/how-do-i-prevent-apache-from-serving-the-git-directory
+- https://www.guru99.com/postgresql-create-database.html
 
 README file made using Dillinger.io
