@@ -6,6 +6,7 @@ For this application Digital Ocean was used for a Ubuntu Linux server instance.
 - IP Address: 167.71.128.240
 - URL: http://www.167.71.128.240.xip.io/
 - ssh grader@167.71.128.240 -p 2200
+- Passphrase: thisisroot
 
 ### Initial steps
 logging into root@167.71.128.240
