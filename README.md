@@ -176,12 +176,12 @@ PasswordAuthentication no
 Install the 'unattended-upgrades' package
 - $ sudo apt install unattended-upgrades
 - $ sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
-Uncomment line:
+##### Uncomment line:
 - "${distro_id}:${distro_codename}-updates";
-Uncomment line and change 'false' to 'true'
+##### Uncomment line and change 'false' to 'true'
 - Unattended-Upgrade::Remove-Unused-Kernel-Packages "true";
 - Unattended-Upgrade::Automatic-Reboot "true";
-Uncomment and change Reboot time
+##### Uncomment and change Reboot time
 - Unattended-Upgrade::Automatic-Reboot-Time "02:38";
 #### Enable automatic update and set intervals
 - $ sudo nano /etc/apt/apt.conf.d/20auto-upgrades
