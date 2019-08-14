@@ -10,7 +10,6 @@ For this application Digital Ocean was used for a Ubuntu Linux server instance.
 - ssh grader@167.71.128.240 -p 2200
 - 'grader' user passphrase: thisisroot
 - 'grader' user password: root
-
 ### Initial steps
 logging into root@167.71.128.240
 - create local key using "ssh-keygen"
@@ -20,7 +19,9 @@ logging into root@167.71.128.240
 - $ sudo adduser grader
 - give sudo permissions: $ usermod -aG sudo grader
 - log into grader: $ su - grader 
-- update Ubuntu: $ sudo apt-get update
+### Update packages
+- $ sudo apt-get update
+- $ sudo apt-get upgrade
 ### Install Apache
 - Run command: $ sudo apt-get install apache2
 - Go to 167.71.128.240 to see if Apache has installed and running
@@ -168,9 +169,32 @@ PasswordAuthentication no
 - $ service ssh restart
 ### Configure Timezone
 - $ sudo dpkg-reconfigure tzdata
-### Update everything
+### Update packages
 - $ sudo apt-get update
 - $ sudo apt-get upgrade
+### Configuring system for automatic updates
+Install the 'unattended-upgrades' package
+- $ sudo apt install unattended-upgrades
+- $ sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
+Uncomment line:
+- "${distro_id}:${distro_codename}-updates";
+Uncomment line and change 'false' to 'true'
+- Unattended-Upgrade::Remove-Unused-Kernel-Packages "true";
+- Unattended-Upgrade::Automatic-Reboot "true";
+Uncomment and change Reboot time
+- Unattended-Upgrade::Automatic-Reboot-Time "02:38";
+#### Enable automatic update and set intervals
+- $ sudo nano /etc/apt/apt.conf.d/20auto-upgrades
+Copy and paste the following lines: 
+- APT::Periodic::Update-Package-Lists "1";
+- APT::Periodic::Download-Upgradeable-Packages "1";
+- APT::Periodic::AutocleanInterval "7";
+- APT::Periodic::Unattended-Upgrade "1";
+Debug to ensre if it worked: 
+- $ sudo unattended-upgrades --dry-run --debug
+Log can also be checked in a few days to see if the upgrades worked: 
+- $ sudo cat /var/log/unattended-upgrades/unattended-upgrades.log
+Source: https://libre-software.net/ubuntu-automatic-updates/
 ### Sources
 - digitalocean.com
 - https://stackoverflow.com
