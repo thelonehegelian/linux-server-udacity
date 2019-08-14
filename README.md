@@ -116,11 +116,9 @@ logging into root@167.71.128.240
 - $ pip install psycopg2
 - check if remote connections to Postgresql are disabled: $  sudo nano /etc/postgresql/10/main/pg_hba.conf
 Permissions should look like this: 
-
-local   replication     all                                     peer
-host    replication     all             127.0.0.1/32            md5
-host    replication     all             ::1/128                 md5	
-
+local   	replication 	all 		peer
+host   	replication 	all 	127.0.0.1/32 	md5
+host    	replication 	all 	::1/128 	md5
 - Source: https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps
 ### Enable ssh connection
 Shut the virtual environment
