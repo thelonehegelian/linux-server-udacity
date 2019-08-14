@@ -139,9 +139,9 @@ Load the public key on the virtual machine
 - Copy and the public key on local machine
 ### Change Permsissions
 ##### /home/grader/.ssh and /home/grader/.ssh/authorized_keys
-$ sudo chown -R  grader:grader /home/grader/.ssh
-$ sudo chmod 700 /home/grader/.ssh
-$ sudo chmod 600 /home/grader/.ssh/authorized_keys
+- $ sudo chown -R  grader:grader /home/grader/.ssh
+- $ sudo chmod 700 /home/grader/.ssh
+- $ sudo chmod 600 /home/grader/.ssh/authorized_keys
 ### Enable Key authentication and disable password
 - run: $ sudo nano /etc/ssh/sshd_config
 - Change lines: 
