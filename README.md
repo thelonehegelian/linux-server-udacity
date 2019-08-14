@@ -194,7 +194,7 @@ PasswordAuthentication no
 - $ sudo unattended-upgrades --dry-run --debug
 ##### Log can also be checked in a few days to see if the upgrades worked: 
 - $ sudo cat /var/log/unattended-upgrades/unattended-upgrades.log
-Source: https://libre-software.net/ubuntu-automatic-updates/
+- Source: https://libre-software.net/ubuntu-automatic-updates/
 ### Sources
 - digitalocean.com
 - https://stackoverflow.com
