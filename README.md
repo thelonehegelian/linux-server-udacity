@@ -52,7 +52,7 @@ logging into root@167.71.128.240
 
         ServerName 167.71.128.240
         ServerAlias 167.71.128.240
-        ServerAdmin grader@165.22.118.21
+        ServerAdmin grader@167.71.128.240
        WSGIDaemonProcess catalog python-path=/var/www/catalog:/var/www/catalog/venv/lib/python2.7/site-packages
        WSGIProcessGroup catalog
        WSGIScriptAlias / /var/www/catalog/catalog.wsgi
@@ -89,10 +89,10 @@ logging into root@167.71.128.240
     application.secret_key = 'supersecretkey'
 
 ### Edit item catalog program files
-- Rename server.py to __init__.py
+Rename server.py to __init__.py
 - cd /var/www/catalog/catalog
 - $ mv server.py __init__.py
-- Update the absolute path of client_secrets.json in __init__.py to /var/www/catalog/catalog
+- Update the absolute path of client_secrets.json in __init__.py to '/var/www/catalog/catalog/client_secrets.json'
 ### Install and configure PostgreSQL
 - $ sudo apt-get install libpq-dev python-dev
 - $ sudo apt-get install postgresql postgresql-contrib
@@ -110,12 +110,13 @@ logging into root@167.71.128.240
 - $ python books.py
 - Wait for the message "Books Added"
 - Restart Apache to launch the app: $ sudo service apache2 restart
-- Go to 167.71.128.240
+- Go to 167.71.128.240. The app should be working now.
+- For debugging: $ sudo tail -20 /var/log/apache2/error.log
 #### Last checks
 - these two might not have installed through the requirement.txt, Install now if there are errors:	
 - $ pip install SQLAlchemy
 - $ pip install psycopg2
-- check if remote connections to Postgresql are disabled: $  sudo nano /etc/postgresql/10/main/pg_hba.conf
+- check if remote connections to Postgresql are disabled: $ sudo nano /etc/postgresql/10/main/pg_hba.conf
 Permissions should look like this: 
 
 - | local         | replication   | |      all      |     peer      | 
