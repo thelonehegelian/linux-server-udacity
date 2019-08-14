@@ -8,7 +8,7 @@ For this application Digital Ocean was used for a Ubuntu Linux server instance.
 - App directory (WSGIScript File in/web root path): /var/www/catalog/
 - SSH port: 2200
 - ssh grader@167.71.128.240 -p 2200
-- Passphrase: thisisroot
+- 'grader' user passphrase: thisisroot
 - 'grader' user password: root
 
 ### Initial steps
@@ -41,12 +41,13 @@ logging into root@167.71.128.240
 ### Install Virtual Environment and dependencies
 - cd /var/www/catalog
 - $ sudo apt-get install python-pip 
+Install dependencies outside the virtual environment
+- $ sudo pip install -r catalog/requirements.txt
+Install the virtual environment
 - $ sudo pip install virtualenv 
 - $ sudo virtualenv venv 
 - $ source venv/bin/activate 
 - $ sudo chmod 777 venv
-- $ sudo pip install -r catalog/requirements.txt
-- $ sudo apt-get install python-psycopg2
 ### Configure New Virtual Host
 - $ sudo nano /etc/apache2/sites-available/catalog.conf
 - Add the lines:
@@ -135,6 +136,11 @@ Load the public key on the virtual machine
 - $ sudo touch .ssh/authorized_keys
 - $ sudo nano .ssh/authorized_keys
 - Copy and the public key on local machine
+### Change Permsissions
+/home/grader/.ssh and /home/grader/.ssh/authorized_keys
+$ sudo chown -R  grader:grader /home/grader/.ssh
+$ sudo chmod 700 /home/grader/.ssh
+$ sudo chmod 600 /home/grader/.ssh/authorized_keys
 ### Enable Key authentication and disable password
 - run: $ sudo nano /etc/ssh/sshd_config
 - Change lines: 
