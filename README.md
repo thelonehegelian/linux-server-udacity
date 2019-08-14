@@ -130,7 +130,7 @@ Permissions should look like this:
 
 - Source: https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps
 ### Enable ssh connection
-Shut the virtual environment
+##### Shut the virtual environment
 - $ deactivate
 Load the public key on the virtual machine
 - $ sudo mkdir .ssh
@@ -138,7 +138,7 @@ Load the public key on the virtual machine
 - $ sudo nano .ssh/authorized_keys
 - Copy and the public key on local machine
 ### Change Permsissions
-/home/grader/.ssh and /home/grader/.ssh/authorized_keys
+##### /home/grader/.ssh and /home/grader/.ssh/authorized_keys
 $ sudo chown -R  grader:grader /home/grader/.ssh
 $ sudo chmod 700 /home/grader/.ssh
 $ sudo chmod 600 /home/grader/.ssh/authorized_keys
@@ -173,7 +173,7 @@ PasswordAuthentication no
 - $ sudo apt-get update
 - $ sudo apt-get upgrade
 ### Configuring system for automatic updates
-Install the 'unattended-upgrades' package
+##### Install the 'unattended-upgrades' package
 - $ sudo apt install unattended-upgrades
 - $ sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
 ##### Uncomment line:
@@ -185,14 +185,14 @@ Install the 'unattended-upgrades' package
 - Unattended-Upgrade::Automatic-Reboot-Time "02:38";
 #### Enable automatic update and set intervals
 - $ sudo nano /etc/apt/apt.conf.d/20auto-upgrades
-Copy and paste the following lines: 
+##### Copy and paste the following lines: 
 - APT::Periodic::Update-Package-Lists "1";
 - APT::Periodic::Download-Upgradeable-Packages "1";
 - APT::Periodic::AutocleanInterval "7";
 - APT::Periodic::Unattended-Upgrade "1";
-Debug to ensre if it worked: 
+##### Debug to ensure if it worked: 
 - $ sudo unattended-upgrades --dry-run --debug
-Log can also be checked in a few days to see if the upgrades worked: 
+##### Log can also be checked in a few days to see if the upgrades worked: 
 - $ sudo cat /var/log/unattended-upgrades/unattended-upgrades.log
 Source: https://libre-software.net/ubuntu-automatic-updates/
 ### Sources
