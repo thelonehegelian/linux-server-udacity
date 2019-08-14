@@ -41,7 +41,7 @@ logging into root@167.71.128.240
 - $ sudo pip install virtualenv 
 - $ sudo virtualenv venv 
 - $ source venv/bin/activate 
-- $ sudo chmod -R 777 venv
+- $ sudo chmod 777 venv
 - $ sudo pip install -r catalog/requirements.txt
 - $ sudo apt-get install python-psycopg2
 ### Configure New Virtual Host
