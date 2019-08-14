@@ -117,9 +117,9 @@ logging into root@167.71.128.240
 - check if remote connections to Postgresql are disabled: $  sudo nano /etc/postgresql/10/main/pg_hba.conf
 Permissions should look like this: 
 
-| local         | replication   | |      all      |     peer      | 
-| host          | replication   | | 127.0.0.1/32  |      md5      |
-| host          | replication   | |  ::1/128      |      md5      |
+- | local         | replication   | |      all      |     peer      | 
+- | host          | replication   | | 127.0.0.1/32  |      md5      |
+- | host          | replication   | |  ::1/128      |      md5      |
 
 - Source: https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps
 ### Enable ssh connection
